@@ -11,7 +11,7 @@ public class Mahasiswa {
     public void tampilMahasiswa () {
         System.out.println("NIM: " + NIM + " | Nama: " + nama + " | Prodi: ");
     }
-    public void SearchNim (Mahasiswa[] mhs, String cari) {
+    public static  void SearchNim (Mahasiswa[] mhs, String cari) {
         boolean ketemu = false;
         for (int i = 0; i < mhs.length; i++) {
             if (mhs[i].NIM.equalsIgnoreCase(cari)) {

@@ -11,7 +11,7 @@ public class MahasiswaMain {
         };
         MataKuliah[] matkul = {
             new MataKuliah("MK001", "Struktur Data", 3),
-            new MataKuliah("MK002", "Basis Data", 3), shhhhhshshw
+            new MataKuliah("MK002", "Basis Data", 3), 
             new MataKuliah("MK003", "Desain Web", 3)    
         };
         Penilaian[] dataNilai = {
@@ -58,7 +58,7 @@ public class MahasiswaMain {
                 case 5:
                     System.out.print("Masukkan NIM yang dicari: ");
                     String cari = input.nextLine(); 
-                    mahasiswa.SearchNim(mhs, cari);
+                    Mahasiswa.SearchNim(mhs, cari);
                     break;
                 case 6:
                     System.out.println("Terima kasih telah menggunakan sistem akademik.");
