@@ -36,25 +36,30 @@ public class MahasiswaMain {
 
             switch (menu) {
                 case 1:
+                System.out.println("Daftar Mahasiswa: ");
                     for (Mahasiswa mahasiswa : mhs) {
                         mahasiswa.tampilMahasiswa();                       
                     }
                     break;
                 case 2:
+                System.out.println("Daftar Mata Kuliah: ");
                     for (MataKuliah MataKuliah : matkul) {
                         MataKuliah.tampilMataKuliah();
                     }
                     break;
                 case 3:
+                System.out.println("Daftar Penilaian ");
                     for (Penilaian penilaian : dataNilai) {
                         penilaian.tampilDataPenilaian();
                     }
                     break;
-                case 4:
-                    for (Penilaian ShortingNilai : dataNilai) {
-                        ShortingNilai.tampilDataPenilaian(); 
+                    case 4:
+                    dataNilai[0].ShortingNilai(dataNilai);
+                    for (Penilaian nilai : dataNilai) {
+                        nilai.tampilDataPenilaian();
                     }
                     break;
+                
                 case 5:
                     System.out.print("Masukkan NIM yang dicari: ");
                     String cari = input.nextLine(); 
@@ -72,4 +77,3 @@ public class MahasiswaMain {
     } 
 
 }
-

@@ -9,6 +9,6 @@ public class MataKuliah {
         this.sks = sks;
     }
     public void tampilMataKuliah() {
-        System.out.println("Kode MK: " + kodeMK + " | Nama: " + " | SKS: ");
+        System.out.println("Kode MK: " + kodeMK + " | Nama: " + namaMK +" | SKS: " + sks);
     }
 }

@@ -22,7 +22,7 @@ public class Penilaian {
         for (int i = 0; i < dataNilai.length; i++) {
             Penilaian temp = dataNilai[i];
             int j=i-1;
-            while (j >= 0 && dataNilai[j].nilaiAkhir > temp.nilaiAkhir) {
+            while (j >= 0 && dataNilai[j].nilaiAkhir <  temp.nilaiAkhir) {
                 dataNilai[j + 1] = dataNilai[j];
                 j--;
             }

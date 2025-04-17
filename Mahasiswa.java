@@ -9,7 +9,7 @@ public class Mahasiswa {
         this.prodi = prodi;
     }
     public void tampilMahasiswa () {
-        System.out.println("NIM: " + NIM + " | Nama: " + nama + " | Prodi: ");
+        System.out.println("NIM: " + NIM + " | Nama: " + nama + " | Prodi: " + prodi);
     }
     public static  void SearchNim (Mahasiswa[] mhs, String cari) {
         boolean ketemu = false;
@@ -18,9 +18,9 @@ public class Mahasiswa {
                 mhs[i].tampilMahasiswa();
                 ketemu = true;
             }
-            if (!ketemu) {
-                System.out.println("Mahasiswa dengan NIM " + cari + " tidak ditemukan.");
-            }
+        }
+        if (!ketemu) {
+            System.out.println("Mahasiswa dengan NIM " + cari + " tidak ditemukan.");
         }
     }
 }
