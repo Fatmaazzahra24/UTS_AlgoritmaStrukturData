@@ -7,19 +7,21 @@ public class MahasiswaMain {
         Mahasiswa[] mhs = {
             new Mahasiswa("22001", "Ali Rahman", "Informatika"),
             new Mahasiswa("22002", "Budi Santoso", "Informatika"),
-            new Mahasiswa("22003", "Citra Dewi", "Sistem Informasi Bisnis")
+            new Mahasiswa("22003", "Citra Dewi", "Sistem Informasi Bisnis"),
+            new Mahasiswa("22004", "Zaim", "Sistem Informasi Bisnis"),
+            new Mahasiswa("22005", "Fatma", "Sistem Informasi Bisnis"),
         };
         MataKuliah[] matkul = {
-            new MataKuliah("MK001", "Struktur Data", 3),
-            new MataKuliah("MK002", "Basis Data", 3), 
-            new MataKuliah("MK003", "Desain Web", 3)    
+            new MataKuliah("MK001", "Struktur Data", "Bu triana ", 3),
+            new MataKuliah("MK002", "Basis Data","pak Yusuf ", 3), 
+            new MataKuliah("MK003", "Desain Web", "Bu anita",3)    
         };
         Penilaian[] dataNilai = {
-            new Penilaian(mhs[0], matkul[0], 80, 85, 90),
-            new Penilaian(mhs[0], matkul[1], 60, 75, 70),
-            new Penilaian(mhs[1], matkul[0], 75, 70, 80),
-            new Penilaian(mhs[2], matkul[1], 85, 90, 95),
-            new Penilaian(mhs[2], matkul[2], 80, 90, 65)
+            new Penilaian(mhs[0], matkul[0], 80, 85, 90, 75),
+            new Penilaian(mhs[0], matkul[1], 60, 75, 70, 80),
+            new Penilaian(mhs[1], matkul[0], 75, 70, 80, 85),
+            new Penilaian(mhs[2], matkul[1], 85, 90, 95, 80),
+            new Penilaian(mhs[2], matkul[2], 80, 90, 65, 70),
         };
       
         while (running) {
@@ -27,9 +29,10 @@ public class MahasiswaMain {
             System.out.println("1. Tampilkan Daftar Mahasiswa");
             System.out.println("2. Tampilkan Daftar Mata Kuliah");
             System.out.println("3. Tampilkan Data Penilaian");
-            System.out.println("4. Urutkan Mahasiswa Berdasarkan Nilai Akhir");
-            System.out.println("5. Cari Mahasiswa Berdasarkan NIM");
-            System.out.println("6. Keluar "); 
+            System.out.println("4. Urutkan Mahasiswa Berdasarkan Nilai Akhir (bubble sort/ asc)");
+            System.out.println("5. Urutkan Mahasiswa Berdasarkan Nilai Akhir (insertion sort/ dcs)");
+            System.out.println("6. Cari Mahasiswa Berdasarkan NIM");
+            System.out.println("7. Keluar "); 
             System.out.print("Pilih Menu: ");
             int menu = input.nextInt();
             input.nextLine(); 
@@ -54,18 +57,24 @@ public class MahasiswaMain {
                     }
                     break;
                     case 4:
-                    dataNilai[0].ShortingNilai(dataNilai);
+                    dataNilai[0].ShortingNilaiBubble(dataNilai);
+                    for (Penilaian nilai : dataNilai) {
+                        nilai.tampilDataPenilaian();
+                    }
+                    break;
+                    case 5:
+                    dataNilai[0].ShortingNilaiInsertion(dataNilai);
                     for (Penilaian nilai : dataNilai) {
                         nilai.tampilDataPenilaian();
                     }
                     break;
                 
-                case 5:
+                case 6:
                     System.out.print("Masukkan NIM yang dicari: ");
                     String cari = input.nextLine(); 
                     Mahasiswa.SearchNim(mhs, cari);
                     break;
-                case 6:
+                case 7:
                     System.out.println("Terima kasih telah menggunakan sistem akademik.");
                     running = false;
                     break;
